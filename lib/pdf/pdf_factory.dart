@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:qr_flutter/qr_flutter.dart';
 
 import '../model.dart';
 import '../theme.dart';
@@ -19,7 +20,18 @@ Future<pw.Document> buildPdfDocument(Trombi data) async {
 
   final noPhotoAsset = await rootBundle.load('assets/no-photo.png');
   final noPhotoBytes = noPhotoAsset.buffer.asUint8List();
-  pw.Image noPhoto = pw.Image(pw.MemoryImage(noPhotoBytes));
+
+  final qrPainter = QrPainter(
+    data: data.contact,
+    version: QrVersions.auto,
+    gapless: true,
+    errorCorrectionLevel: QrErrorCorrectLevel.L,
+  );
+
+  final qrData = await qrPainter.toImageData(600.0);
+
+  final qrBytes = qrData!.buffer.asUint8List();
+  pw.Image qr = pw.Image(pw.MemoryImage(qrBytes));
 
   final pdf = pw.Document();
   pdf.addPage(
@@ -169,9 +181,10 @@ Future<pw.Document> buildPdfDocument(Trombi data) async {
               ),
             ),
             pw.Padding(
-              padding: const pw.EdgeInsets.all(18.0),
+              padding: const pw.EdgeInsets.all(8.0),
               child: pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.center,
+                crossAxisAlignment: pw.CrossAxisAlignment.center,
                 children: [
                   pw.Container(
                     alignment: pw.Alignment.center,
@@ -186,6 +199,12 @@ Future<pw.Document> buildPdfDocument(Trombi data) async {
                       fontWeight: pw.FontWeight.bold,
                       color: PdfColor.fromInt(fcpeBlue.value),
                     ),
+                  ),
+                  pw.Container(
+                    alignment: pw.Alignment.center,
+                    width: 80,
+                    child: qr,
+                    padding: const pw.EdgeInsets.only(left: 8),
                   ),
                 ],
               ),

@@ -1,6 +1,7 @@
 import 'package:fcpe_trombi/theme.dart';
 import 'package:fcpe_trombi/widgets/form_view.dart';
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class PDFPreview extends StatelessWidget {
   final FormController controller;
@@ -18,7 +19,7 @@ class PDFPreview extends StatelessWidget {
         final scale = maxWidth / 1290;
 
         return Container(
-          padding: EdgeInsets.all(18 * scale),
+          padding: EdgeInsets.all(8 * scale),
           decoration: const BoxDecoration(color: Colors.white, boxShadow: [
             BoxShadow(blurRadius: 5, spreadRadius: 1, color: Colors.grey)
           ]),
@@ -195,6 +196,18 @@ class PDFPreview extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           color: fcpeBlue,
                         ),
+                      ),
+                      ValueListenableBuilder(
+                        valueListenable: controller.contact,
+                        builder: (context, contact, _) {
+                          return contact.text.isNotEmpty
+                              ? QrImageView(
+                                  data: contact.text,
+                                  version: QrVersions.auto,
+                                  size: 80.0,
+                                )
+                              : const SizedBox.shrink();
+                        },
                       ),
                     ],
                   ),
