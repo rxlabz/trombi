@@ -33,6 +33,8 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -43,15 +45,30 @@ class _MainScreenState extends State<MainScreen> {
         leadingWidth: 0,
         backgroundColor: fcpeGreen,
       ),
-      body: Provider.value(
-        value: formController,
-        child: Row(
-          children: [
-            const FormView(),
-            Expanded(child: Preview(controller: formController)),
-          ],
-        ),
-      ),
+      body: size.width > 1024
+          ? Provider.value(
+              value: formController,
+              child: Row(
+                children: [
+                  const FormView(),
+                  Expanded(child: Preview(controller: formController)),
+                ],
+              ),
+            )
+          : const Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.warning, color: Colors.amber),
+                  Flexible(
+                    child: Text(
+                      'Ne fonctionne pas encore sur téléphone mobile',
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
+            ),
     );
   }
 }
