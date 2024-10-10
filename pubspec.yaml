@@ -1,0 +1,33 @@
+name: fcpe_trombi
+description: "trombi generator"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  image_picker: ^1.1.2
+  pdf: ^3.11.1
+  provider: ^6.1.2
+  web: ^1.0.0
+  path_provider: ^2.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/fcpe.png
+    - assets/mail.png
+    - assets/no-photo.png
