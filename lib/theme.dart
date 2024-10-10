@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
 
 final theme = ThemeData.from(
   colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
