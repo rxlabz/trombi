@@ -38,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Trombi',
+          'Trombi FCPE',
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: false,
