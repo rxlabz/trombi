@@ -26,10 +26,10 @@ class FormController {
       );
 
   final schoolName = TextEditingController(
-    text: 'Écoles élémentaire et maternelle Harmonie Rebatel',
+    text: 'École ',
   );
 
-  final groupName = TextEditingController(text: 'Maternelle');
+  final groupName = TextEditingController(text: 'Groupe');
 
   final year = ValueNotifier<int>(DateTime.now().year);
 
@@ -39,8 +39,7 @@ class FormController {
     text: defaultInvite,
   );
 
-  final contact =
-      TextEditingController(text: 'conseil.harmonie-rebatel@fcpe69.fr');
+  final contact = TextEditingController(text: 'mail@fcpe.fr');
 
   void updateYear(int? newValue) => year.value = newValue!;
 

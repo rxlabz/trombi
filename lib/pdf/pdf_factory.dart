@@ -70,7 +70,6 @@ Future<pw.Document> buildPdfDocument(Trombi data) async {
                     ),
                   ),
                 ),
-                /* TODO(rxlabz) afficher le texte seul */
                 pw.Expanded(
                   flex: 3,
                   child: pw.Column(

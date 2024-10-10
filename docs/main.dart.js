@@ -42549,7 +42549,7 @@ B.IH.prototype={
 O(a){return new B.Az(new B.As(null),$.aH_(),null)}}
 B.As.prototype={
 av(){var s=$.aq(),r=Date.now(),q=B.a([],t.Ye)
-return new B.TY(new B.p0(new B.lq(new B.bQ("\xc9coles \xe9l\xe9mentaire et maternelle Harmonie Rebatel",A.e4,A.bO),s),new B.lq(new B.bQ("Maternelle",A.e4,A.bO),s),new B.c_(B.uW(new B.ej(r,0,!1)),s),new B.c_(q,s),new B.lq(new B.bQ("\xc9changez avec nous pour pr\xe9parer les conseils d'\xe9cole ! Une question que vous souhaitez partager ?\nBesoin d'aide sur un sujet ? Un t\xe9moignage \xe0 faire remonter ? \xc9crivez-nous...!",A.e4,A.bO),s),new B.lq(new B.bQ("conseil.harmonie-rebatel@fcpe69.fr",A.e4,A.bO),s)))}}
+return new B.TY(new B.p0(new B.lq(new B.bQ("\xc9cole ",A.e4,A.bO),s),new B.lq(new B.bQ("Groupe",A.e4,A.bO),s),new B.c_(B.uW(new B.ej(r,0,!1)),s),new B.c_(q,s),new B.lq(new B.bQ("\xc9changez avec nous pour pr\xe9parer les conseils d'\xe9cole ! Une question que vous souhaitez partager ?\nBesoin d'aide sur un sujet ? Un t\xe9moignage \xe0 faire remonter ? \xc9crivez-nous...!",A.e4,A.bO),s),new B.lq(new B.bQ("mail@fcpe.fr",A.e4,A.bO),s)))}}
 B.TY.prototype={
 O(a){var s=null,r=B.bM(a,s,t.w).w
 if(r.a.a>1024){r=this.d
