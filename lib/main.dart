@@ -59,7 +59,10 @@ class _MainScreenState extends State<MainScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.warning, color: Colors.amber),
+                  Padding(
+                    padding: EdgeInsets.all(18.0),
+                    child: Icon(Icons.warning, color: Colors.amber),
+                  ),
                   Flexible(
                     child: Text(
                       'Ne fonctionne pas encore sur téléphone mobile',
